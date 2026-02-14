@@ -19,6 +19,7 @@ model User {
   name              String?
   posts             Post[]
   emailVerified     Boolean            @default(false)
+  role              Role
   image             String?
   createdAt         DateTime           @default(now())
   updatedAt         DateTime           @updatedAt

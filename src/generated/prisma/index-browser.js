@@ -125,6 +125,7 @@ exports.Prisma.UserScalarFieldEnum = {
   email: 'email',
   name: 'name',
   emailVerified: 'emailVerified',
+  role: 'role',
   image: 'image',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
@@ -281,6 +282,11 @@ exports.Prisma.JsonNullValueFilter = {
   JsonNull: Prisma.JsonNull,
   AnyNull: Prisma.AnyNull
 };
+exports.Role = exports.$Enums.Role = {
+  RESIDENT: 'RESIDENT',
+  COMMUNITY_LEADER: 'COMMUNITY_LEADER'
+};
+
 exports.RequestStatus = exports.$Enums.RequestStatus = {
   PENDING: 'PENDING',
   APPROVED: 'APPROVED',
