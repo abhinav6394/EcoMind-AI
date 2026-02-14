@@ -123,7 +123,33 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
 exports.Prisma.UserScalarFieldEnum = {
   id: 'id',
   email: 'email',
-  name: 'name'
+  name: 'name',
+  emailVerified: 'emailVerified',
+  image: 'image',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.CommunityScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  description: 'description',
+  leaderId: 'leaderId'
+};
+
+exports.Prisma.MemberScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  communityId: 'communityId',
+  joinedAt: 'joinedAt'
+};
+
+exports.Prisma.CommunityRequestScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  communityId: 'communityId',
+  status: 'status',
+  requestedAt: 'requestedAt'
 };
 
 exports.Prisma.PostScalarFieldEnum = {
@@ -134,9 +160,110 @@ exports.Prisma.PostScalarFieldEnum = {
   authorId: 'authorId'
 };
 
+exports.Prisma.SessionScalarFieldEnum = {
+  id: 'id',
+  expiresAt: 'expiresAt',
+  token: 'token',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  ipAddress: 'ipAddress',
+  userAgent: 'userAgent',
+  userId: 'userId'
+};
+
+exports.Prisma.AccountScalarFieldEnum = {
+  id: 'id',
+  accountId: 'accountId',
+  providerId: 'providerId',
+  userId: 'userId',
+  accessToken: 'accessToken',
+  refreshToken: 'refreshToken',
+  idToken: 'idToken',
+  accessTokenExpiresAt: 'accessTokenExpiresAt',
+  refreshTokenExpiresAt: 'refreshTokenExpiresAt',
+  scope: 'scope',
+  password: 'password',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.VerificationScalarFieldEnum = {
+  id: 'id',
+  identifier: 'identifier',
+  value: 'value',
+  expiresAt: 'expiresAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.HouseholdScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  energyUsage: 'energyUsage',
+  waterUsage: 'waterUsage',
+  wasteGenerated: 'wasteGenerated',
+  transportation: 'transportation',
+  commuteDistance: 'commuteDistance',
+  location: 'location',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.RecommendationScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  communityId: 'communityId',
+  recommendation: 'recommendation',
+  category: 'category',
+  status: 'status',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.NodeScalarFieldEnum = {
+  id: 'id',
+  recommendationId: 'recommendationId',
+  label: 'label',
+  status: 'status',
+  position: 'position',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.EdgeScalarFieldEnum = {
+  id: 'id',
+  sourceNodeId: 'sourceNodeId',
+  targetNodeId: 'targetNodeId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.TaskScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  recommendationId: 'recommendationId',
+  taskName: 'taskName',
+  dueDate: 'dueDate',
+  status: 'status',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.UserProgressScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  recommendationId: 'recommendationId',
+  progressPercentage: 'progressPercentage',
+  lastUpdated: 'lastUpdated'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
+};
+
+exports.Prisma.JsonNullValueInput = {
+  JsonNull: Prisma.JsonNull
 };
 
 exports.Prisma.QueryMode = {
@@ -149,10 +276,56 @@ exports.Prisma.NullsOrder = {
   last: 'last'
 };
 
+exports.Prisma.JsonNullValueFilter = {
+  DbNull: Prisma.DbNull,
+  JsonNull: Prisma.JsonNull,
+  AnyNull: Prisma.AnyNull
+};
+exports.RequestStatus = exports.$Enums.RequestStatus = {
+  PENDING: 'PENDING',
+  APPROVED: 'APPROVED',
+  REJECTED: 'REJECTED'
+};
+
+exports.RecommendationCategory = exports.$Enums.RecommendationCategory = {
+  ENERGY: 'ENERGY',
+  WATER: 'WATER',
+  WASTE: 'WASTE'
+};
+
+exports.RecommendationStatus = exports.$Enums.RecommendationStatus = {
+  PENDING: 'PENDING',
+  COMPLETED: 'COMPLETED',
+  IN_PROGRESS: 'IN_PROGRESS'
+};
+
+exports.NodeStatus = exports.$Enums.NodeStatus = {
+  PENDING: 'PENDING',
+  COMPLETED: 'COMPLETED',
+  NOT_STARTED: 'NOT_STARTED'
+};
+
+exports.TaskStatus = exports.$Enums.TaskStatus = {
+  PENDING: 'PENDING',
+  IN_PROGRESS: 'IN_PROGRESS',
+  COMPLETED: 'COMPLETED'
+};
 
 exports.Prisma.ModelName = {
   User: 'User',
-  Post: 'Post'
+  Community: 'Community',
+  Member: 'Member',
+  CommunityRequest: 'CommunityRequest',
+  Post: 'Post',
+  Session: 'Session',
+  Account: 'Account',
+  Verification: 'Verification',
+  Household: 'Household',
+  Recommendation: 'Recommendation',
+  Node: 'Node',
+  Edge: 'Edge',
+  Task: 'Task',
+  UserProgress: 'UserProgress'
 };
 
 /**
